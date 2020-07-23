@@ -1,18 +1,32 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App" />
     </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
 
-export default {
-    name: 'Home',
-    components: {
-        HelloWorld
+import waves from "@/assets/js/waves.js";
+
+@Component
+export default class Home extends Vue {
+    mounted() {
+        waves();
     }
 }
 </script>
+
+<style lang="less" scoped>
+.home {
+    width: 100vw;
+    height: 100vh;
+}
+</style>
+<style lang="less">
+.home canvas {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 300px;
+}
+</style>
