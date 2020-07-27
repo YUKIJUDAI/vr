@@ -1,25 +1,80 @@
 <template>
     <div class="home">
+
+        <Head></Head>
+        <div class="home-body">
+            <div class="left">
+                <img src="~@/assets/img/left.png">
+            </div>
+            <main class="con">
+                <img src="~@/assets/img/con1.png" class="con1">
+                <img src="~@/assets/img/con2.png" class="con2">
+                <img src="~@/assets/img/con3.png" class="con3">
+                <img src="~@/assets/img/con4.png" class="con4">
+            </main>
+            <div class="right">
+                <img src="~@/assets/img/right.png">
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import Head from "@/components/head.vue";
 
 import waves from "@/assets/js/waves.js";
 
-@Component
+@Component({
+    components: { Head }
+})
 export default class Home extends Vue {
     mounted() {
-        waves();
+        // waves();
     }
 }
 </script>
 
 <style lang="less" scoped>
 .home {
-    width: 100vw;
-    height: 100vh;
+    .home-body {
+        background: url("~@/assets/img/home-bg.png") no-repeat;
+        background-size: cover;
+        height: 1080px;
+    }
+    .con {
+        position: relative;
+        .con1 {
+            position: absolute;
+            top: 250px;
+            left: 420px;
+        }
+        .con2 {
+            position: absolute;
+            top: 455px;
+            left: 205px;
+        }
+        .con3 {
+            position: absolute;
+            top: 390px;
+            left: 585px;
+        }
+        .con4 {
+            position: absolute;
+            top: 600px;
+            left: 345px;
+        }
+    }
+    .left {
+        position: absolute;
+        left: 0;
+        top: 120px;
+    }
+    .right {
+        position: absolute;
+        right: 0;
+        top: 120px;
+    }
 }
 </style>
 <style lang="less">
