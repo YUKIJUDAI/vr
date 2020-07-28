@@ -1,62 +1,73 @@
 <template>
-    <div class="suzhou">
+    <div class="online-intro">
 
         <Head></Head>
-        <div class="city-body">
-            <div class="left">
-                <img src="~@/assets/img/sz-left.png">
-            </div>
+        <main>
             <div class="title">
-                <img src="~@/assets/img/sz-title.png">
+                <img src="~@/assets/img/i-online-title.png">
             </div>
-            <div class="vr"></div>
+            <div class="con">
+                <div class="left">
+                    <img src="~@/assets/img/explame1.png">
+                </div>
+                <div class="right">
+                    <p class="right-title">微创®线上知行学院</p>
+                    <p class="right-time"><span>时间：</span></p>
+                    <p class="right-info"><span>简介：</span></p>
+                </div>
+            </div>
             <div class="list">
                 <ul>
-                    <li v-for="(item,i) in 9" :key="i">
-                        <img src="~@/assets/img/list.png">
+                    <li v-for="(item,i) in 9">
+                        <img src="">
                         <p class="zh">中文</p>
                         <p class="en">English</p>
                     </li>
-                    <li class="info">
-                        <img src="~@/assets/img/sz-info.png">
-                    </li>
                 </ul>
             </div>
-            <div class="right">
-                <img src="~@/assets/img/sz-right.png">
-            </div>
-        </div>
+        </main>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 
 @Component
-export default class Suzhou extends Vue {
+export default class OnlineIntro extends Vue {
 
 }
 </script>
 
 <style lang="less" scoped>
-.suzhou {
-    .city-body {
-        background: url("~@/assets/img/sz-bg.png") no-repeat center left;
-        background-size: cover;
-        height: 100vh;
-    }
+.online-intro {
+    background: url("~@/assets/img/online-bg.png") no-repeat center left;
+    background-size: cover;
+    height: 100vh;
     .title {
-        padding-top: 160px;
+        padding-top: 170px;
         text-align: center;
     }
-    .vr {
-        width: 1560px;
-        height: 600px;
-        margin: 0 auto;
+    .con {
+        display: flex;
+        justify-items: center;
+        margin-top: 85px;
+        margin-bottom: 100px;
+        .right {
+            margin-left: 40px;
+            margin-top: 20px;
+            color: #fff;
+            line-height: 28px;
+            .right-title {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            span {
+                font-weight: bold;
+            }
+        }
     }
     .list {
-        margin-left: 375px;
-        margin-top: 20px;
+        margin-left: 15px;
         ul {
             display: flex;
         }
@@ -96,18 +107,6 @@ export default class Suzhou extends Vue {
             margin-left: 25px;
             margin-top: 15px;
         }
-    }
-    .left {
-        position: absolute;
-        left: 0;
-        top: 280px;
-        cursor: pointer;
-    }
-    .right {
-        position: absolute;
-        right: 0;
-        top: 280px;
-        cursor: pointer;
     }
 }
 </style>

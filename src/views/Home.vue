@@ -21,16 +21,10 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import Head from "@/components/head.vue";
 
-import waves from "@/assets/js/waves.js";
-
-@Component({
-    components: { Head }
-})
+@Component
 export default class Home extends Vue {
     mounted() {
-        // waves();
     }
 }
 </script>
@@ -38,30 +32,30 @@ export default class Home extends Vue {
 <style lang="less" scoped>
 .home {
     .home-body {
-        background: url("~@/assets/img/home-bg.png") no-repeat;
+        background: url("~@/assets/img/home-bg.png") no-repeat center left;
         background-size: cover;
-        height: 1080px;
+        height: 100vh;
     }
     .con {
         position: relative;
         .con1 {
             position: absolute;
-            top: 250px;
+            top: 200px;
             left: 420px;
         }
         .con2 {
             position: absolute;
-            top: 455px;
+            top: 415px;
             left: 205px;
         }
         .con3 {
             position: absolute;
-            top: 390px;
+            top: 350px;
             left: 585px;
         }
         .con4 {
             position: absolute;
-            top: 600px;
+            top: 560px;
             left: 345px;
         }
     }

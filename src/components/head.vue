@@ -12,9 +12,9 @@
                 <router-link class="title" tag="div" to="/suzhou">
                     <img src="~@/assets/img/title3.png">
                 </router-link>
-                <div class="title">
+                <router-link class="title" tag="div" to="/online-intro">
                     <img src="~@/assets/img/title4.png">
-                </div>
+                </router-link>
                 <div class="title">
                     <img src="~@/assets/img/title5.png">
                 </div>
@@ -22,12 +22,24 @@
                     <img src="~@/assets/img/search.png">
                 </div>
             </div>
+            <div class="search">
+                <div class="search-input">
+                    <input type="text" />
+                    <i class="icon-search"></i>
+                </div>
+                <div class="line">
+                    <i class="icon-line"></i>
+                </div>
+                <div class="close">
+                    <i class="icon-close"></i>
+                </div>
+            </div>
         </main>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Head extends Vue {
@@ -57,6 +69,49 @@ export default class Head extends Vue {
         .search {
             margin-left: 45px;
             cursor: pointer;
+        }
+    }
+    .search-input {
+        position: relative;
+        input {
+            width: 90%;
+            border: 0;
+            padding: 10px 0;
+            font-size: 26px;
+            color: #fff;
+            background-color: transparent;
+            &:focus {
+                outline: none;
+            }
+        }
+        .icon-search {
+            position: absolute;
+            top: 5px;
+            right: 0px;
+            width: 29px;
+            height: 29px;
+            display: block;
+            background: url("~@/assets/img/icon-search.png");
+        }
+    }
+    .line {
+        width: 100%;
+        height: 3px;
+        .icon-line {
+            background: url("~@/assets/img/icon-line.png");
+            display: block;
+            height: 3px;
+        }
+    }
+    .close {
+        width: 100%;
+        
+        .icon-close {
+            background: url("~@/assets/img/icon-close.png");
+            display: block;
+            width: 47px;
+            height: 47px;
+            margin: 0 auto;
         }
     }
 }
