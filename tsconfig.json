@@ -17,6 +17,6 @@
         },
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "src/assets/js/waves.js"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "src/assets/js/waves.js", "src/assets/js/CSS3DRenderer.min.js", "src/assets/js/vr.js"],
     "exclude": ["node_modules"]
 }

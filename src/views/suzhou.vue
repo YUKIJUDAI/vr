@@ -1,50 +1,50 @@
 <template>
     <div class="suzhou">
-
-        <Head></Head>
-        <div class="city-body">
-            <div class="left">
-                <img src="~@/assets/img/sz-left.png">
-            </div>
-            <div class="title">
-                <img src="~@/assets/img/sz-title.png">
-            </div>
-            <div class="vr"></div>
-            <div class="list">
-                <ul>
-                    <li v-for="(item,i) in 9" :key="i">
-                        <img src="~@/assets/img/list.png">
-                        <p class="zh">中文</p>
-                        <p class="en">English</p>
-                    </li>
-                    <li class="info">
-                        <img src="~@/assets/img/sz-info.png">
-                    </li>
-                </ul>
-            </div>
-            <div class="right">
-                <img src="~@/assets/img/sz-right.png">
-            </div>
+        <div class="left">
+            <img src="~@/assets/img/sz-left.png">
+        </div>
+        <div class="title">
+            <img src="~@/assets/img/sz-title.png">
+        </div>
+        <div class="vr" id="vr"></div>
+        <div class="list">
+            <ul>
+                <li v-for="(item,i) in 9" :key="i">
+                    <img src="~@/assets/img/list.png">
+                    <p class="zh">中文</p>
+                    <p class="en">English</p>
+                </li>
+                <li class="info">
+                    <img src="~@/assets/img/sz-info.png">
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <img src="~@/assets/img/sz-right.png">
         </div>
     </div>
 </template>
 
 <script>
 import { Vue, Component } from "vue-property-decorator";
+import { createView, reView } from "@/assets/js/vr";
 
 @Component
 export default class Suzhou extends Vue {
-
+    mounted() {
+        createView(
+            ["../posx.jpg", "../img/negx.jpg", "../img/posy.jpg", "../img/negy.jpg", "../img/posz.jpg", "../img/negz.jpg"],
+            document.getElementById("vr")
+        )
+    }
 }
 </script>
 
 <style lang="less" scoped>
 .suzhou {
-    .city-body {
-        background: url("~@/assets/img/sz-bg.png") no-repeat center left;
-        background-size: cover;
-        height: 100vh;
-    }
+    background: url("~@/assets/img/sz-bg.png") no-repeat center left;
+    background-size: cover;
+    height: 100vh;
     .title {
         padding-top: 160px;
         text-align: center;

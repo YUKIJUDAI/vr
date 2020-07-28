@@ -1,5 +1,8 @@
 <template>
     <div class="head">
+        <div class="back" @click="$router.back()">
+            <img src="~@/assets/img/back.png">
+        </div>
         <main>
             <div class="head-main">
                 <img src="~@/assets/img/logo.png" class="logo">
@@ -26,7 +29,7 @@
                 <div class="search" v-if="searchFlag">
                     <div class="search-input">
                         <input type="text" v-model="searchText" />
-                        <i class="icon-search"></i>
+                        <i class="icon-search" @click="search"></i>
                     </div>
                     <div class="line">
                         <i class="icon-line"></i>
@@ -50,11 +53,17 @@ export default class Head extends Vue {
 
     mounted() {
         document.onkeydown = (e) => {
-            if (!this.searchFlag || this.searchText === "") return;
-            if (e && e.keyCode === 13) this.$router.push("/serach?key=" + this.searchText);
+            if (!this.searchFlag) return;
+            if (e && e.keyCode === 13) this.search();
         }
     }
-
+    // 搜索
+    search() {
+        if (this.searchText && this.searchText !== "") {
+            this.$router.push("/search?key=" + this.searchText);
+        }
+    }
+    // 关闭
     close() {
         this.searchText = "";
         this.searchFlag = false;
@@ -71,6 +80,13 @@ export default class Head extends Vue {
     top: 0;
     left: 0;
     z-index: 99;
+    .back {
+        height: 120px;
+        line-height: 150px;
+        float: left;
+        margin-left: 50px;
+        cursor: pointer;
+    }
     .head-main {
         display: flex;
         align-items: center;

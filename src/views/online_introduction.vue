@@ -19,7 +19,7 @@
             <div class="list">
                 <ul>
                     <li v-for="(item,i) in 9">
-                        <img src="">
+                        <img src="~@/assets/img/list.png">
                         <p class="zh">中文</p>
                         <p class="en">English</p>
                     </li>
