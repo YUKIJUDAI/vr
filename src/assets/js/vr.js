@@ -146,20 +146,6 @@ var phi = 0, theta = 0;
 
 var touchX, touchY;
 
-function createDom(arr, dom) {
-    dom.innerHTML = "";
-    for (let index = 0; index < arr.length; index++) {
-        var div = document.createElement("div");
-        div.setAttribute("class", "surface");
-        div.setAttribute("id", "surface_" + index);
-        var img = new Image();
-        img.src = arr[index];
-        img.setAttribute("class", "bg");
-        div.appendChild(img);
-        dom.appendChild(div);
-    }
-}
-
 function init(dom) {
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
@@ -214,11 +200,7 @@ function init(dom) {
     renderer.setSize(dom.offsetWidth, dom.offsetHeight);
     dom.appendChild(renderer.domElement);
 
-    document.addEventListener('mousedown', onDocumentMouseDown, false);
-    // document.addEventListener('wheel', onDocumentMouseWheel, false);
-
-    document.addEventListener('touchstart', onDocumentTouchStart, false);
-    document.addEventListener('touchmove', onDocumentTouchMove, false);
+    dom.addEventListener('mousedown', onDocumentMouseDown, false);
 
     window.addEventListener('resize', onWindowResize, false);
 
@@ -251,10 +233,10 @@ function animate() {
 
 function onWindowResize() {
 
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = document.getElementById("vr").offsetWidth / document.getElementById("vr").offsetHeight;
     camera.updateProjectionMatrix();
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(document.getElementById("vr").offsetWidth, document.getElementById("vr").offsetHeight);
 
 }
 
@@ -284,13 +266,6 @@ function onDocumentMouseUp(event) {
 
 }
 
-// function onDocumentMouseWheel(event) {
-
-//     camera.fov += event.deltaY * 0.05;
-//     camera.updateProjectionMatrix();
-
-// }
-
 function onDocumentTouchStart(event) {
 
     event.preventDefault();
@@ -316,13 +291,11 @@ function onDocumentTouchMove(event) {
 
 }
 
-export const createView = function (arr, dom) {
-    createDom(arr, dom);
+export const createView = function (dom) {
     init(dom);
     animate();
 }
 
-export const reView = function(arr, dom) {
-    createDom(arr, dom);
+export const reView = function(dom) {
     init(dom);
 }

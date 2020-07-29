@@ -9,7 +9,7 @@
                 <router-link class="title title1" tag="div" to="/">
                     <img src="~@/assets/img/title1.png">
                 </router-link>
-                <router-link class="title" tag="div" to="/suzhou">
+                <router-link class="title" tag="div" to="/shanghai">
                     <img src="~@/assets/img/title2.png">
                 </router-link>
                 <router-link class="title" tag="div" to="/suzhou">
@@ -18,9 +18,9 @@
                 <router-link class="title" tag="div" to="/online-intro">
                     <img src="~@/assets/img/title4.png">
                 </router-link>
-                <div class="title">
+                <router-link class="title" tag="div" to="/education-intro">
                     <img src="~@/assets/img/title5.png">
-                </div>
+                </router-link>
                 <div class="search" @click="searchFlag = true">
                     <img src="~@/assets/img/search.png">
                 </div>

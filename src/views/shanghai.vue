@@ -1,7 +1,7 @@
 <template>
     <div class="suzhou">
         <div class="title">
-            <img src="~@/assets/img/sz-title.png">
+            <img src="~@/assets/img/sh-title.png">
         </div>
         <div class="vr" id="vr">
             <div class="surface" id="surface_0">
@@ -35,7 +35,7 @@
             </swiper>
         </div>
         <div class="info">
-            <img src="~@/assets/img/sz-info.png">
+            <img src="~@/assets/img/sh-info.png">
         </div>
         <div class="left" @click="prev">
             <img src="~@/assets/img/sz-left.png">
@@ -51,7 +51,7 @@ import { Vue, Component } from "vue-property-decorator";
 import { createView, reView } from "@/assets/js/vr";
 
 @Component
-export default class Suzhou extends Vue {
+export default class Shanghai extends Vue {
     swiperOptions = {
         slidesPerView: 9
     }

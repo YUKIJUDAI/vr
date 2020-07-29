@@ -2,14 +2,14 @@
     <div class="online-intro">
         <main>
             <div class="title">
-                <img src="~@/assets/img/online-title.png">
+                <img src="~@/assets/img/education-title.png">
             </div>
             <div class="con">
                 <div class="left">
                     <img src="~@/assets/img/explame1.png">
                 </div>
                 <div class="right">
-                    <p class="right-title">微创®线上知行学院</p>
+                    <p class="right-title">专业教育</p>
                     <p class="right-time"><span>时间：</span></p>
                     <p class="right-info"><span>简介：</span></p>
                 </div>
@@ -33,7 +33,7 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component
-export default class OnlineIntro extends Vue {
+export default class EducationIntro extends Vue {
     swiperOptions = {
         slidesPerView: 9
     }
