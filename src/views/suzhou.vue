@@ -34,7 +34,7 @@
                 </swiper-slide>
             </swiper>
         </div>
-        <div class="info">
+        <div class="sz-info">
             <img src="~@/assets/img/sz-info.png">
         </div>
         <div class="left" @click="prev">
@@ -125,7 +125,7 @@ export default class Suzhou extends Vue {
             }
         }
     }
-    .info {
+    .sz-info {
         position: absolute;
         width: 291px;
         height: 99px;

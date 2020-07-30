@@ -6,6 +6,7 @@ import Shanghai from "../views/shanghai.vue";
 import OnlineIntro from "../views/online_introduction.vue";
 import EducationIntro from "../views/education_introduction.vue";
 import Search from "../views/search.vue";
+import Video from "../views/video.vue";
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,11 @@ const routes: Array<RouteConfig> = [
         name: "Search",
         component: Search,
     },
+    {
+        path: "/video",
+        name: "Video",
+        component: Video,
+    }
 ];
 
 const router = new VueRouter({

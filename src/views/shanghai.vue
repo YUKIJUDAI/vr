@@ -34,7 +34,7 @@
                 </swiper-slide>
             </swiper>
         </div>
-        <div class="info">
+        <div class="sh-info">
             <img src="~@/assets/img/sh-info.png">
         </div>
         <div class="left" @click="prev">
@@ -125,7 +125,7 @@ export default class Shanghai extends Vue {
             }
         }
     }
-    .info {
+    .sh-info {
         position: absolute;
         width: 291px;
         height: 99px;

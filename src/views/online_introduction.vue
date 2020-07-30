@@ -43,7 +43,6 @@ export default class OnlineIntro extends Vue {
     handleClickSlide(index: number) {
         this.swiper.slideToLoop(index);
     }
-
 }
 </script>
 
