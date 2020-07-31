@@ -5,31 +5,31 @@
         </div>
         <div class="vr" id="vr">
             <div class="surface" id="surface_0">
-                <img src="~@/assets/img/posx.jpg" class="bg">
+                <img :src="data[index].images.right_path" class="bg">
             </div>
             <div class="surface" id="surface_1">
-                <img src="~@/assets/img/negx.jpg" class="bg">
+                <img :src="data[index].images.left_path" class="bg">
             </div>
             <div class="surface" id="surface_2">
-                <img src="~@/assets/img/posy.jpg" class="bg">
+                <img :src="data[index].images.top_path" class="bg">
             </div>
             <div class="surface" id="surface_3">
-                <img src="~@/assets/img/negy.jpg" class="bg">
+                <img :src="data[index].images.bottom_path" class="bg">
             </div>
             <div class="surface" id="surface_4">
-                <img src="~@/assets/img/posz.jpg" class="bg">
+                <img :src="data[index].images.before_path" class="bg">
             </div>
             <div class="surface" id="surface_5">
-                <img src="~@/assets/img/negz.jpg" class="bg">
+                <img :src="data[index].images.after_path" class="bg">
             </div>
         </div>
         <div class="list">
             <swiper ref="mySwiper" :options="swiperOptions" @click-slide="handleClickSlide">
-                <swiper-slide v-for="(item,i) in 11" :key="i">
+                <swiper-slide v-for="(item,i) in data" :key="i">
                     <div class="swiper-li">
-                        <img src="~@/assets/img/list.png">
-                        <p class="zh">中文</p>
-                        <p class="en">English</p>
+                        <img :src="item.base_path + '/'+ item.avatar_path">
+                        <p class="zh">{{item.title}}</p>
+                        <p class="en">{{item.title_en}}</p>
                     </div>
                 </swiper-slide>
             </swiper>
@@ -55,14 +55,36 @@ export default class Suzhou extends Vue {
     swiperOptions = {
         slidesPerView: 9
     }
+
+    data = [{
+        avatar_path: "",
+        base_path: "",
+        images: {},
+        title: "",
+        title_en: ""
+    }];
+
+    index: number = 0;
+
     get swiper() {
         return (this.$refs.mySwiper as any).$swiper;
     }
-    mounted() {
-        createView(document.getElementById("vr"))
+    created() {
+        this.$http.post(
+            "http://me.amrtang.com/vr_photo/api/web/v1/resource/list",
+            {
+                time: 1480576266,
+                token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+                authToken: "",
+                navigate: 0
+            }
+        ).then(res => {
+            res.status === 1 && (this.data = res.data) && createView(document.getElementById("vr"));
+        });
     }
     handleClickSlide(index: number) {
         this.swiper.slideToLoop(index);
+        this.index = index;
     }
     prev() {
         this.swiper.slidePrev();
