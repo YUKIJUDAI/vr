@@ -1,6 +1,6 @@
 <template>
     <div class="head">
-        <div class="back" @click="$router.back()">
+        <div class="back" @click="$router.back()" v-show="!$route.meta.noback">
             <img src="~@/assets/img/back.png">
         </div>
         <main>
