@@ -2,10 +2,11 @@
     <div class="video">
         <main>
             <div class="title">
-                <img src="~@/assets/img/online-title.png">
+                <img src="~@/assets/img/online-title.png" v-show="data.navigate === 2">
+                <img src="~@/assets/img/education-title.png" v-show="data.navigate === 3">
             </div>
             <div class="play-area">
-                <iframe src="http://go.plvideo.cn/front/video/preview?vid=e4a87aabfe128e3de086fb594df29a3e_e"></iframe>
+                <iframe :src="data.href"></iframe>
             </div>
         </main>
     </div>
@@ -16,7 +17,21 @@ import { Vue, Component } from "vue-property-decorator";
 
 @Component
 export default class Video extends Vue {
-    mounted() {
+
+    data = {};
+
+    created() {
+        this.$http.post(
+            "http://me.amrtang.com/vr_photo/api/web/v1/resource/info",
+            {
+                time: 1480576266,
+                token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+                authToken: "",
+                id: this.$route.query.id
+            }
+        ).then(res => {
+            res.status === 1 && (this.data = res.data);
+        });
     }
 }
 </script>

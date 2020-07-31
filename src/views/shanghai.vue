@@ -56,7 +56,7 @@ export default class Shanghai extends Vue {
     swiperOptions = {
         slidesPerView: 9
     }
-    
+
     data = [{
         avatar_path: "",
         base_path: "",
@@ -89,9 +89,11 @@ export default class Shanghai extends Vue {
     }
     prev() {
         this.swiper.slidePrev();
+        if (this.index > 0) this.index--;
     }
     next() {
         this.swiper.slideNext();
+        if (this.index < this.data.length) this.index++;
     }
 }
 </script>

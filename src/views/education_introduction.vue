@@ -5,22 +5,22 @@
                 <img src="~@/assets/img/education-title.png">
             </div>
             <div class="con">
-                <div class="left">
-                    <img src="~@/assets/img/explame1.png">
-                </div>
+                <router-link tag="div" class="left" :to="'/video?id=' + data[index].id">
+                    <img :src="data[index].base_path + '/' + data[index].video_big_path">
+                </router-link>
                 <div class="right">
                     <p class="right-title">专业教育</p>
-                    <p class="right-time"><span>时间：</span></p>
-                    <p class="right-info"><span>简介：</span></p>
+                    <p class="right-time"><span>时间：{{data[index].time_length}}</span></p>
+                    <p class="right-info"><span>简介：{{data[index].introduce}}</span></p>
                 </div>
             </div>
             <div class="list">
                 <swiper ref="mySwiper" :options="swiperOptions" @click-slide="handleClickSlide">
-                    <swiper-slide v-for="(item,i) in 11" :key="i">
+                    <swiper-slide v-for="(item,i) in data" :key="i">
                         <div class="swiper-li">
-                            <img src="~@/assets/img/list.png">
-                            <p class="zh">中文</p>
-                            <p class="en">English</p>
+                            <img :src="item.base_path + '/'+ item.avatar_path">
+                            <p class="zh">{{item.title}}</p>
+                            <p class="en">{{item.title_en}}</p>
                         </div>
                     </swiper-slide>
                 </swiper>
@@ -37,11 +37,40 @@ export default class EducationIntro extends Vue {
     swiperOptions = {
         slidesPerView: 9
     }
+
+    data = [{
+        avatar_path: "",
+        base_path: "",
+        video_big_path:"",
+        title: "",
+        title_en: "",
+        introduce: "",
+        time_length: ""
+    }];
+
+    index: number = 0;
+    
     get swiper() {
         return (this.$refs.mySwiper as any).$swiper;
     }
+
+    created() {
+        this.$http.post(
+            "http://me.amrtang.com/vr_photo/api/web/v1/resource/list",
+            {
+                time: 1480576266,
+                token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+                authToken: "",
+                navigate: 3
+            }
+        ).then(res => {
+            res.status === 1 && (this.data = res.data);
+        });
+    }
+    
     handleClickSlide(index: number) {
         this.swiper.slideToLoop(index);
+        this.index = index;
     }
 
 }
@@ -62,6 +91,11 @@ export default class EducationIntro extends Vue {
         margin-top: 85px;
         margin-bottom: 100px;
         margin-left: 60px;
+        .left img {
+            width: 469px;
+            height: 269px;
+            cursor: pointer;
+        }
         .right {
             margin-left: 40px;
             margin-top: 20px;

@@ -76,7 +76,7 @@ export default class Suzhou extends Vue {
                 time: 1480576266,
                 token: "c92114bcc9e4454f1d2b7399dc9d62a9",
                 authToken: "",
-                navigate: 0
+                navigate: 1
             }
         ).then(res => {
             res.status === 1 && (this.data = res.data) && createView(document.getElementById("vr"));
@@ -88,9 +88,11 @@ export default class Suzhou extends Vue {
     }
     prev() {
         this.swiper.slidePrev();
+        if (this.index > 0) this.index--;
     }
     next() {
         this.swiper.slideNext();
+        if (this.index < this.data.length) this.index++;
     }
 }
 </script>
