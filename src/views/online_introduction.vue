@@ -112,6 +112,7 @@ export default class OnlineIntro extends Vue {
     .list {
         width: 100%;
         margin: 0 auto;
+        height: 130px;
         .swiper-li {
             float: left;
             margin-left: 8px;

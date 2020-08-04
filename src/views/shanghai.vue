@@ -54,7 +54,11 @@ import { createView, reView } from "@/assets/js/vr";
 @Component
 export default class Shanghai extends Vue {
     swiperOptions = {
-        slidesPerView: 9
+        observer: true,
+        observeParents: true,
+        slidesPerView: 9,
+        slidesPerGroup: 1,
+        height: 130
     }
 
     data = [{
@@ -117,6 +121,7 @@ export default class Shanghai extends Vue {
     .list {
         width: 60%;
         margin: 0 auto;
+        height: 130px;
         .swiper-li {
             float: left;
             margin-left: 8px;

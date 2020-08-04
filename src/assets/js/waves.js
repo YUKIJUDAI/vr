@@ -1,14 +1,35 @@
+import homeBg from "@/assets/img/home-bg.png";
+
+const getImagePortion = (imgObj, newWidth, newHeight, startX, startY) => {
+    var tnCanvas = document.createElement('canvas');
+    var tnCanvasContext = tnCanvas.getContext('2d');
+    tnCanvas.width = newWidth; tnCanvas.height = newHeight;
+
+    var bufferCanvas = document.createElement('canvas');
+    var bufferContext = bufferCanvas.getContext('2d');
+    bufferCanvas.width = imgObj.width;
+    bufferCanvas.height = imgObj.height;
+    bufferContext.drawImage(imgObj, 0, 0);
+
+    tnCanvasContext.drawImage(bufferCanvas, startX, startY, newWidth, newHeight, 0, 0, newWidth, newHeight);
+    return tnCanvas;
+}
+
+
 const waves = () => {
-    let c  = document.createElement("canvas").getContext("2d");
+    var img = new Image();
+    img.src = homeBg;
+    var tnCanvas = null;
+    let c = document.createElement("canvas").getContext("2d");
     let postctx = document.querySelector(".home").appendChild(document.createElement("canvas")).getContext("2d");
     let canvas = c.canvas;
     let vertices = [];
 
     // Effect Properties
     let vertexCount = 7000;
-    let vertexSize = 3;
+    let vertexSize = 4;
     let oceanWidth = 204;
-    let oceanHeight = -80;
+    let oceanHeight = -150;
     let gridSize = 32;
     let waveSize = 8;
     let perspective = 100;
@@ -28,7 +49,8 @@ const waves = () => {
             postctx.canvas.height = canvas.height = postctx.canvas.offsetHeight;
         }
 
-        c.fillStyle = `hsl(200deg, 100%, 2%)`;
+        var bg = c.createPattern(tnCanvas, "no-repeat");
+        c.fillStyle = bg;
         c.fillRect(0, 0, canvas.width, canvas.height);
         c.save();
         c.translate(canvas.width / 2, canvas.height / 2);
@@ -82,7 +104,7 @@ const waves = () => {
             if (z < 0) return;
 
             c.globalAlpha = a;
-            c.fillStyle = `rgb(255,255,255)`;
+            c.fillStyle = `rgb(245,245,245)`;
             c.fillRect(x - (a * vertexSize) / 2, y - (a * vertexSize) / 2, a * vertexSize, a * vertexSize);
             c.globalAlpha = 1;
         });
@@ -91,10 +113,7 @@ const waves = () => {
         // Post-processing
         postctx.drawImage(canvas, 0, 0);
 
-        postctx.globalCompositeOperation = "screen";
-        postctx.filter = "blur(16px)";
         postctx.drawImage(canvas, 0, 0);
-        postctx.filter = "blur(0)";
         postctx.globalCompositeOperation = "source-over";
 
         requestAnimationFrame(loop);
@@ -109,7 +128,11 @@ const waves = () => {
         vertices.push([(-offset + x) * gridSize, y * gridSize, z * gridSize]);
     }
 
-    loop();
+    img.onload = function () {
+        var h = document.querySelector("canvas").offsetTop;
+        tnCanvas = getImagePortion(img, 1920, 200, 0, h);
+        loop();
+    };
 };
 
 export default waves;

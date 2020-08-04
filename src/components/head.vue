@@ -1,7 +1,9 @@
 <template>
-    <div class="head">
-        <div class="back" @click="$router.back()" v-show="!$route.meta.noback">
-            <img src="~@/assets/img/back.png">
+    <div>
+        <div class="head" :style="{height: searchFlag ? '300px' : '120px'}">
+            <div class="back" @click="$router.back()" v-show="!$route.meta.noback">
+                <img src="~@/assets/img/back.png">
+            </div>
         </div>
         <main>
             <div class="head-main">
@@ -72,21 +74,12 @@ export default class Head extends Vue {
 </script>
 
 <style scoped lang="less">
-.head {
-    background: url("~@/assets/img/head.png") no-repeat;
-    background-size: cover;
-    width: 100vw;
+main {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99;
-    .back {
-        height: 120px;
-        line-height: 150px;
-        float: left;
-        margin-left: 50px;
-        cursor: pointer;
-    }
+    right: 0;
+    z-index: 200;
     .head-main {
         display: flex;
         align-items: center;
@@ -163,6 +156,23 @@ export default class Head extends Vue {
     .fade-enter,
     .fade-leave-to {
         opacity: 0;
+    }
+}
+.head {
+    background: url("~@/assets/img/head.png") no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    .back {
+        height: 120px;
+        line-height: 150px;
+        float: left;
+        margin-left: 50px;
+        cursor: pointer;
     }
 }
 </style>

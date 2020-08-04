@@ -116,6 +116,7 @@ export default class Suzhou extends Vue {
     .list {
         width: 60%;
         margin: 0 auto;
+        height: 130px;
         .swiper-li {
             float: left;
             margin-left: 8px;

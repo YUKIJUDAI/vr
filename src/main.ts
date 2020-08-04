@@ -6,7 +6,7 @@ import router from "./router";
 import store from "./store";
 import http from "./assets/js/http";
 
-import "swiper/swiper.less";
+import "./assets/less/swiper.less";
 import "./assets/less/normalize.less";
 
 Vue.use(VueAwesomeSwiper);
