@@ -7,7 +7,9 @@
         </div>
         <main>
             <div class="head-main">
-                <img src="~@/assets/img/logo.png" class="logo">
+                <a href="http://www.microport.com.cn/" target="_blank" rel="noopener noreferrer">
+                    <img src="~@/assets/img/logo.png" class="logo">
+                </a>
                 <router-link class="title title1" tag="div" to="/">
                     <img src="~@/assets/img/title1.png">
                 </router-link>

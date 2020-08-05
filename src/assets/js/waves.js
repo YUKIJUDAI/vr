@@ -130,7 +130,8 @@ const waves = () => {
 
     img.onload = function () {
         var h = document.querySelector("canvas").offsetTop;
-        tnCanvas = getImagePortion(img, 1920, 200, 0, h);
+        console.log((1920 - window.innerWidth) / 2)
+        tnCanvas = getImagePortion(img, window.innerWidth, 200, (1920 - window.innerWidth) / 2, h);
         loop();
     };
 };

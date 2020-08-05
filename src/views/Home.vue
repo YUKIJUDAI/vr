@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <img src="~@/assets/img/home-bg.png" alt="" class="bg">
         <div class="light">
             <img src="~@/assets/img/left-light.png" class="left-light">
             <img src="~@/assets/img/right-light.png" class="right-light">
@@ -9,10 +10,18 @@
         </div>
         <main class="con">
             <img src="~@/assets/img/point.png" class="point">
-            <img src="~@/assets/img/con1.png" class="con1">
-            <img src="~@/assets/img/con2.png" class="con2">
-            <img src="~@/assets/img/con3.png" class="con3">
-            <img src="~@/assets/img/con4.png" class="con4">
+            <router-link to="/shanghai" class="con1" :style="{'left': 420 + width + 'px'}">
+                <img src="~@/assets/img/con1.png">
+            </router-link>
+            <router-link to="/education-intro" class="con2" :style="{'left': 205 + width + 'px'}">
+                <img src="~@/assets/img/con2.png">
+            </router-link>
+            <router-link to="/online-intro" class="con3" :style="{'left': 585 + width + 'px'}">
+                <img src="~@/assets/img/con3.png">
+            </router-link>
+            <router-link to="/suzhou" class="con4" :style="{'left': 348 + width + 'px'}">
+                <img src="~@/assets/img/con4.png">
+            </router-link>
         </main>
         <div class="right">
             <img src="~@/assets/img/right.png">
@@ -26,6 +35,9 @@ import vaves from "@/assets/js/waves";
 
 @Component
 export default class Home extends Vue {
+
+    width: number = (window.innerWidth - 1160) / 2;
+
     mounted() {
         vaves();
         window.addEventListener("resize", () => {
@@ -44,9 +56,14 @@ export default class Home extends Vue {
 
 <style lang="less" scoped>
 .home {
-    background: url("~@/assets/img/home-bg.png") no-repeat top left;
-    background-size: cover;
     height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .bg {
+        position: absolute;
+        left: 50%;
+        margin-left: -960px;
+    }
     .light {
         .left-light {
             position: fixed;
@@ -131,41 +148,47 @@ export default class Home extends Vue {
             top: 0;
         }
         .con1 {
-            position: absolute;
+            position: fixed;
             top: 240px;
-            left: 420px;
+            left: 800px;
+            z-index: 200;
         }
         .con2 {
-            position: absolute;
+            position: fixed;
             top: 455px;
-            left: 205px;
+            left: 585px;
+            z-index: 200;
         }
         .con3 {
-            position: absolute;
+            position: fixed;
             top: 390px;
-            left: 585px;
+            left: 965px;
+            z-index: 200;
         }
         .con4 {
-            position: absolute;
+            position: fixed;
             top: 600px;
-            left: 345px;
+            left: 705px;
+            z-index: 200;
         }
     }
     .left {
         position: absolute;
         left: 0;
         top: 120px;
+        z-index: 99;
     }
     .right {
         position: absolute;
         right: 0;
         top: 120px;
+        z-index: 99;
     }
 }
 </style>
 <style lang="less">
 .home canvas {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100vw;
     height: 200px;
