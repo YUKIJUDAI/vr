@@ -13,12 +13,12 @@
                 <router-link class="title title1" tag="div" to="/">
                     <img src="~@/assets/img/title1.png">
                 </router-link>
-                <router-link class="title" tag="div" to="/shanghai">
+                <a href="http://me.amrtang.com/vr_sh/" target="_blank" class="title">
                     <img src="~@/assets/img/title2.png">
-                </router-link>
-                <router-link class="title" tag="div" to="/suzhou">
+                </a>
+                <a href="http://me.amrtang.com/vr_sz/" target="_blank" class="title">
                     <img src="~@/assets/img/title3.png">
-                </router-link>
+                </a>
                 <router-link class="title" tag="div" to="/online-intro">
                     <img src="~@/assets/img/title4.png">
                 </router-link>

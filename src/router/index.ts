@@ -17,16 +17,16 @@ const routes: Array<RouteConfig> = [
         component: Home,
         meta: { noback: true },
     },
-    {
-        path: "/suzhou",
-        name: "Suzhou",
-        component: Suzhou,
-    },
-    {
-        path: "/shanghai",
-        name: "Shanghai",
-        component: Shanghai,
-    },
+    // {
+    //     path: "/suzhou",
+    //     name: "Suzhou",
+    //     component: Suzhou,
+    // },
+    // {
+    //     path: "/shanghai",
+    //     name: "Shanghai",
+    //     component: Shanghai,
+    // },
     {
         path: "/online-intro",
         name: "onlineIntro",
