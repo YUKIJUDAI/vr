@@ -120,6 +120,12 @@ export default class EducationIntro extends Vue {
             margin-bottom: 40px;
         }
     }
+    @media screen and (max-width: 1280px) {
+        .con {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
     .list {
         width: 100%;
         margin: 0 auto;
