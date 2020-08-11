@@ -83,7 +83,7 @@ export default class OnlineIntro extends Vue {
     .title {
         padding-top: 140px;
         text-align: center;
-    }
+    }   
     .con {
         display: flex;
         justify-items: center;
@@ -107,6 +107,12 @@ export default class OnlineIntro extends Vue {
             span {
                 font-weight: bold;
             }
+        }
+    }
+    @media screen and (max-width: 1440px) {
+        .con {
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
     }
     .list {
