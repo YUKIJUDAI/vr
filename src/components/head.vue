@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="head" :style="{height: searchFlag ? '300px' : '120px'}">
-            <div class="back" @click="$router.back()" v-show="!$route.meta.noback">
+            <div class="back" @click="$router.push('/')" v-show="!$route.meta.noback">
                 <img src="~@/assets/img/back.png">
             </div>
         </div>
