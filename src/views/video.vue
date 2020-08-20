@@ -6,7 +6,7 @@
                 <img src="~@/assets/img/education-title.png" v-show="data.navigate === 3">
             </div>
             <div class="play-area">
-                <iframe :src="data.href"></iframe>
+                <iframe :src="data.href" allowfullscreen="true"></iframe>
             </div>
         </main>
     </div>
