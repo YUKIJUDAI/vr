@@ -1,7 +1,13 @@
 <template>
     <div id="app">
-        <Head></Head>
-        <router-view />
+        <template v-if="$route.meta.nohead">
+            <router-view />
+        </template>
+        <template v-else>
+            <Head></Head>
+            <router-view />
+        </template>
+
     </div>
 </template>
 

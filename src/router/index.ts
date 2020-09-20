@@ -7,6 +7,7 @@ import OnlineIntro from "../views/online_introduction.vue";
 import EducationIntro from "../views/education_introduction.vue";
 import Search from "../views/search.vue";
 import Video from "../views/video.vue";
+import Pdf from "../views/pdf.vue";
 
 Vue.use(VueRouter);
 
@@ -46,7 +47,13 @@ const routes: Array<RouteConfig> = [
         path: "/video",
         name: "Video",
         component: Video,
-    }
+    },
+    {
+        path: "/pdf/:type",
+        name: "Pdf",
+        component: Pdf,
+        meta: { nohead: true },
+    },
 ];
 
 const router = new VueRouter({

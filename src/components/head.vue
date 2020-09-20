@@ -25,6 +25,16 @@
                 <router-link class="title" tag="div" to="/education-intro">
                     <img src="~@/assets/img/title5.png">
                 </router-link>
+                <div class="title ul">
+                    <p>AED</p>
+                    <ul>
+                        <router-link tag="li" to="/pdf/0">心脏猝死小科普</router-link>
+                        <router-link tag="li" to="/pdf/1">微创AED地图</router-link>
+                        <router-link tag="li" to="/pdf/2">呼唤APP</router-link>
+                        <router-link tag="li" to="/pdf/3">AED培训日程</router-link>
+                        <router-link tag="li" to="/pdf/4">附录</router-link>
+                    </ul>
+                </div>
                 <div class="search" @click="searchFlag = true">
                     <img src="~@/assets/img/search.png">
                 </div>
@@ -91,11 +101,46 @@ main {
             cursor: pointer;
         }
         .title1 {
-            margin-left: 90px;
+            margin-left: 40px;
         }
         .search {
             margin-left: 45px;
             cursor: pointer;
+        }
+        .ul {
+            color: #fff;
+            opacity: 0.8;
+            position: relative;
+            p {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 6px;
+                    right: -15px;
+                    border: 6px solid transparent;
+                    border-left-color: #fff;
+                    transform: rotate(90deg);
+                }
+            }
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+            ul {
+                position: absolute;
+                width: 200px;
+                padding-top: 30px;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: none;
+
+                li {
+                    list-style: none;
+                    padding: 10px 0;
+                }
+            }
         }
     }
     .search-input {
