@@ -28,11 +28,11 @@
                 <div class="title ul">
                     <p>AED</p>
                     <ul>
-                        <router-link tag="li" to="/pdf/0">心脏猝死小科普</router-link>
-                        <router-link tag="li" to="/pdf/1">微创AED地图</router-link>
-                        <router-link tag="li" to="/pdf/2">呼唤APP</router-link>
-                        <router-link tag="li" to="/pdf/3">AED培训日程</router-link>
-                        <router-link tag="li" to="/pdf/4">附录</router-link>
+                        <li @click="toPdf(0)">心脏猝死小科普</li>
+                        <li @click="toPdf(1)">微创AED地图</li>
+                        <li @click="toPdf(2)">呼唤APP</li>
+                        <li @click="toPdf(3)">AED培训日程</li>
+                        <li @click="toPdf(4)">附录</li>
                     </ul>
                 </div>
                 <div class="search" @click="searchFlag = true">
@@ -76,6 +76,10 @@ export default class Head extends Vue {
         if (this.searchText && this.searchText !== "") {
             this.$router.push("/search?key=" + this.searchText);
         }
+    }
+    toPdf(type) {
+        let routeData = this.$router.resolve({ path: '/Pdf/' + type });
+        window.open(routeData.href, '_blank');
     }
     // 关闭
     close() {
