@@ -77,6 +77,10 @@ export default class Head extends Vue {
             this.$router.push("/search?key=" + this.searchText);
         }
     }
+    toPdf(type) {
+        let routeData = this.$router.resolve({ path: '/Pdf/' + type });
+        window.open(routeData.href, '_blank');
+    }
     // 关闭
     close() {
         this.searchText = "";
