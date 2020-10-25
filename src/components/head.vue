@@ -28,11 +28,11 @@
                 <div class="title ul">
                     <p>AED</p>
                     <ul>
-                        <router-link tag="li" to="/pdf/0">心脏猝死小科普</router-link>
-                        <router-link tag="li" to="/pdf/1">微创AED地图</router-link>
-                        <router-link tag="li" to="/pdf/2">呼唤APP</router-link>
-                        <router-link tag="li" to="/pdf/3">AED培训日程</router-link>
-                        <router-link tag="li" to="/pdf/4">附录</router-link>
+                        <router-link tag="li" to="/aed/0">心脏猝死小科普</router-link>
+                        <router-link tag="li" to="/aed/1">微创AED地图</router-link>
+                        <router-link tag="li" to="/aed/2">呼唤APP</router-link>
+                        <router-link tag="li" to="/aed/3">AED培训日程</router-link>
+                        <router-link tag="li" to="/aed/4">附录</router-link>
                     </ul>
                 </div>
                 <div class="search" @click="searchFlag = true">

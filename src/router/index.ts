@@ -7,7 +7,7 @@ import OnlineIntro from "../views/online_introduction.vue";
 import EducationIntro from "../views/education_introduction.vue";
 import Search from "../views/search.vue";
 import Video from "../views/video.vue";
-import Pdf from "../views/pdf.vue";
+import Aed from "../views/aed.vue";
 
 Vue.use(VueRouter);
 
@@ -49,11 +49,11 @@ const routes: Array<RouteConfig> = [
         component: Video,
     },
     {
-        path: "/pdf/:type",
-        name: "Pdf",
-        component: Pdf,
-        meta: { nohead: true },
+        path: "/aed/:type?",
+        name: "aed",
+        component: Aed,
     },
+
 ];
 
 const router = new VueRouter({
