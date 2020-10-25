@@ -74,6 +74,10 @@ export default class aed extends Vue {
         },
     ]
 
+    created() {
+        this.$route.params.type && (this.index = +this.$route.params.type);
+    }
+
 }
 </script>
 
