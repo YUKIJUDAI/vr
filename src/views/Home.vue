@@ -10,17 +10,20 @@
         </div>
         <main class="con">
             <img src="~@/assets/img/point.png" class="point">
-            <router-link to="/shanghai" class="con1" :style="{'left': 420 + width + 'px'}">
+            <a href="http://me.amrtang.com/vr_sh/" target="_blank" class="con1" :style="{'left': 420 + width + 'px'}">
                 <img src="~@/assets/img/con1.png">
-            </router-link>
+            </a>
             <router-link to="/education-intro" class="con2" :style="{'left': 205 + width + 'px'}">
                 <img src="~@/assets/img/con2.png">
             </router-link>
             <router-link to="/online-intro" class="con3" :style="{'left': 585 + width + 'px'}">
                 <img src="~@/assets/img/con3.png">
             </router-link>
-            <router-link to="/suzhou" class="con4" :style="{'left': 348 + width + 'px'}">
+            <a href="http://me.amrtang.com/vr_sz/" target="_blank" class="con4" :style="{'left': 348 + width + 'px'}">
                 <img src="~@/assets/img/con4.png">
+            </a>
+            <router-link to="/aed" class="con5" :style="{'left': 878 + width + 'px'}">
+                <img src="~@/assets/img/con5.png">
             </router-link>
         </main>
         <div class="right">
@@ -169,6 +172,12 @@ export default class Home extends Vue {
             position: fixed;
             top: 600px;
             left: 705px;
+            z-index: 200;
+        }
+        .con5 {
+            position: fixed;
+            top: 375px;
+            left: 887px;
             z-index: 200;
         }
     }

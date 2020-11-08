@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img src="~@/assets/img/home-bg.png" alt="" class="bg">
+        <img :src="bgImg" alt="" class="bg">
         <div class="light">
             <img src="~@/assets/img/left-light.png" class="left-light">
             <img src="~@/assets/img/right-light.png" class="right-light">
@@ -10,23 +10,23 @@
         </div>
         <main class="con">
             <img src="~@/assets/img/point.png" class="point">
-            <router-link to="/aedtype/1" class="con1" :style="{'left': 420 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象-6.png">
+            <router-link :to="routerList[0]" class="con1" :style="{'left': 420 + width + 'px'}" v-if="arrList[0]">
+                <img :src="arrList[0]">
             </router-link>
-            <router-link to="/aedtype/5" class="con2" :style="{'left': 225 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象.png">
+            <router-link :to="routerList[1]" class="con3" :style="{'left': 615 + width + 'px'}" v-if="arrList[1]">
+                <img :src="arrList[1]">
             </router-link>
-            <router-link to="/aedtype/3" class="con3" :style="{'left': 615 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象-4.png">
+            <router-link :to="routerList[2]" class="con4" :style="{'left': 348 + width + 'px'}" v-if="arrList[2]">
+                <img :src="arrList[2]">
             </router-link>
-            <router-link to="/aedcontent/41" class="con4" :style="{'left': 348 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象-5.png">
+            <router-link :to="routerList[3]" class="con2" :style="{'left': 185 + width + 'px'}" v-if="arrList[3]">
+                <img :src="arrList[3]">
             </router-link>
-            <router-link to="/video?id=25" class="con5" :style="{'left': 838 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象-3.png">
+            <router-link :to="routerList[4]" class="con5" :style="{'left': 838 + width + 'px'}" v-if="arrList[4]">
+                <img :src="arrList[4]">
             </router-link>
-            <router-link to="/aedtype/2" class="con6" :style="{'left': 635 + width + 'px'}">
-                <img src="~@/assets/img/总目录/矢量智能对象-2.png">
+            <router-link :to="routerList[5]" class="con6" :style="{'left': 635 + width + 'px'}" v-if="arrList[5]">
+                <img :src="arrList[5]">
             </router-link>
         </main>
         <div class="right">
@@ -36,13 +36,24 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Watch } from "vue-property-decorator";
 import vaves from "@/assets/js/waves";
 
 @Component
 export default class Home extends Vue {
 
     width: number = (window.innerWidth - 1160) / 2;
+    arrList: Array<string> = [];
+    routerList: Array<string> = [];
+    bgImg: string = "";
+    @Watch("$route")
+    changeType() {
+        this.setImg();
+    }
+
+    created() {
+        this.setImg();
+    }
 
     mounted() {
         vaves();
@@ -52,6 +63,72 @@ export default class Home extends Vue {
     }
     destroyed() {
         window.removeEventListener('resize', this.reload);
+    }
+
+    setImg() {
+        const type = this.$route.params.type;
+        switch (type) {
+            case "1":
+                this.bgImg = require("@/assets/img/part1/home-bg.png");
+                this.arrList = [
+                    require("@/assets/img/part1/矢量智能对象-5.png"),
+                    require("@/assets/img/part1/矢量智能对象-3.png"),
+                    require("@/assets/img/part1/矢量智能对象-4.png"),
+                    require("@/assets/img/part1/矢量智能对象.png"),
+                    require("@/assets/img/part1/矢量智能对象-2.png")
+                ];
+                this.routerList = [
+                    "/aedcontent/11",
+                    "/aedcontent/12",
+                    "/aedcontent/15",
+                    "/aedcontent/10",
+                    "/aedcontent/14",
+                ];
+                return;
+            case "2":
+                 this.bgImg = require("@/assets/img/part2/home-bg.png");
+                this.arrList = [
+                    require("@/assets/img/part2/矢量智能对象-6.png"),
+                    require("@/assets/img/part2/矢量智能对象-4.png"),
+                    require("@/assets/img/part2/矢量智能对象-5.png"),
+                    require("@/assets/img/part2/矢量智能对象-2.png"),
+                    require("@/assets/img/part2/矢量智能对象-3.png"),
+                    require("@/assets/img/part2/矢量智能对象.png"),
+                ];
+                this.routerList = [
+                    "/aedcontent/21",
+                    "/aedcontent/23",
+                    "/aedcontent/25",
+                    "/aedcontent/26",
+                    "/aedcontent/24",
+                    "/aedcontent/22"
+                ];
+                return;   
+            case "3":
+                this.bgImg = require("@/assets/img/part3/home-bg.png");
+                this.arrList = [
+                    require("@/assets/img/part3/矢量智能对象-2.png"),
+                    require("@/assets/img/part3/矢量智能对象.png")
+                ];
+                this.routerList = [
+                    "/aedcontent/31",
+                    "/aedcontent/32"
+                ];
+                return;
+            case "5":
+                this.bgImg = require("@/assets/img/home-bg.png");
+                this.arrList = [
+                    require("@/assets/img/part5/矢量智能对象-3.png"),
+                    require("@/assets/img/part5/矢量智能对象.png"),
+                    require("@/assets/img/part5/矢量智能对象-2.png")
+                ];
+                this.routerList = [
+                    "/aedcontent/51",
+                    "/aedcontent/52",
+                    "/aedcontent/53",
+                ];
+                return;
+        }
     }
 
     reload() {
@@ -156,7 +233,7 @@ export default class Home extends Vue {
         .con1 {
             position: fixed;
             top: 260px;
-            left: 800px;
+            left: 760px;
             z-index: 200;
         }
         .con2 {

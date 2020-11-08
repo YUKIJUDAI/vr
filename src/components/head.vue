@@ -28,11 +28,12 @@
                 <div class="title ul">
                     <p>AED</p>
                     <ul>
-                        <router-link tag="li" to="/aed/0">心脏猝死小科普</router-link>
-                        <router-link tag="li" to="/aed/1">微创AED地图</router-link>
-                        <router-link tag="li" to="/aed/2">呼唤APP</router-link>
-                        <router-link tag="li" to="/aed/3">AED培训日程</router-link>
-                        <router-link tag="li" to="/aed/4">附录</router-link>
+                        <router-link tag="li" to="/aedtype/1">心脏猝死小科普</router-link>
+                        <router-link tag="li" to="/aedtype/2">微创AED地图</router-link>
+                        <router-link tag="li" to="/aedtype/3">呼唤APP</router-link>
+                        <router-link tag="li" to="/aedcontent/41">AED培训日程</router-link>
+                        <router-link tag="li" to="/video?id=25">AED宣传视频</router-link>
+                        <router-link tag="li" to="/aedtype/5">附录</router-link>
                     </ul>
                 </div>
                 <div class="search" @click="searchFlag = true">
@@ -103,6 +104,7 @@ main {
         .title {
             margin: 0 22px;
             cursor: pointer;
+            padding: 10px 0;
         }
         .title1 {
             margin-left: 40px;
@@ -112,14 +114,13 @@ main {
             cursor: pointer;
         }
         .ul {
-            color: #fff;
-            opacity: 0.8;
+            color: rgba(255,255,255,0.8);
             position: relative;
             p {
                 &:after {
                     content: "";
                     position: absolute;
-                    top: 6px;
+                    top: 16px;
                     right: -15px;
                     border: 6px solid transparent;
                     border-left-color: #fff;
@@ -133,16 +134,18 @@ main {
             }
             ul {
                 position: absolute;
-                width: 200px;
-                padding-top: 30px;
-                top: 0;
+                text-indent: 2em;
+                width: 180px;
+                top: 30px;
                 left: 0;
                 z-index: 1;
                 display: none;
-
+                background-color: #fff;
+                color:#333; 
                 li {
                     list-style: none;
-                    padding: 10px 0;
+                    padding: 14px 0;
+                    border-bottom:1px solid #999;
                 }
             }
         }

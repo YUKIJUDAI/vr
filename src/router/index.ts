@@ -1,13 +1,13 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import Suzhou from "../views/suzhou.vue";
-import Shanghai from "../views/shanghai.vue";
 import OnlineIntro from "../views/online_introduction.vue";
 import EducationIntro from "../views/education_introduction.vue";
 import Search from "../views/search.vue";
 import Video from "../views/video.vue";
 import Aed from "../views/aed.vue";
+import AedType from "../views/aedtype.vue";
+import AedContent from "../views/aedcontent.vue";
 
 Vue.use(VueRouter);
 
@@ -18,16 +18,24 @@ const routes: Array<RouteConfig> = [
         component: Home,
         meta: { noback: true },
     },
-    // {
-    //     path: "/suzhou",
-    //     name: "Suzhou",
-    //     component: Suzhou,
-    // },
-    // {
-    //     path: "/shanghai",
-    //     name: "Shanghai",
-    //     component: Shanghai,
-    // },
+    {
+        path: "/aed",
+        name: "aed",
+        component: Aed,
+        meta: { noback: true },
+    },
+    {
+        path: "/aedtype/:type",
+        name: "aedtype",
+        component: AedType,
+        meta: { noback: true },
+    },
+    {
+        path: "/aedcontent/:id",
+        name: "aedcontent",
+        component: AedContent,
+        meta: { noback: true },
+    },
     {
         path: "/online-intro",
         name: "onlineIntro",
@@ -49,11 +57,10 @@ const routes: Array<RouteConfig> = [
         component: Video,
     },
     {
-        path: "/aed/:type?",
+        path: "/aed",
         name: "aed",
         component: Aed,
     },
-
 ];
 
 const router = new VueRouter({
