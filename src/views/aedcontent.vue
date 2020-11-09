@@ -47,7 +47,7 @@ export default class Home extends Vue {
     }
 
     toHome() {
-        this.$router.push("/aedtype/" + this.base);
+        this.$router.push("/aed");
     }
 
 }
