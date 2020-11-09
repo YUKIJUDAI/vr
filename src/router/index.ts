@@ -22,19 +22,16 @@ const routes: Array<RouteConfig> = [
         path: "/aed",
         name: "aed",
         component: Aed,
-        meta: { noback: true },
     },
     {
         path: "/aedtype/:type",
         name: "aedtype",
         component: AedType,
-        meta: { noback: true },
     },
     {
         path: "/aedcontent/:id",
         name: "aedcontent",
         component: AedContent,
-        meta: { noback: true },
     },
     {
         path: "/online-intro",

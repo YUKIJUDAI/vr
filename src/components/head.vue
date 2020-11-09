@@ -1,11 +1,10 @@
 <template>
     <div>
-        <div class="head" :style="{height: searchFlag ? '300px' : '120px'}">
+        <div class="head" :style="{height: searchFlag ? '300px' : '120px'}"></div>
+        <main>
             <div class="back" @click="$router.push('/')" v-show="!$route.meta.noback">
                 <img src="~@/assets/img/back.png">
             </div>
-        </div>
-        <main>
             <div class="head-main">
                 <a href="http://www.microport.com.cn/" target="_blank" rel="noopener noreferrer">
                     <img src="~@/assets/img/logo.png" class="logo">
@@ -97,6 +96,15 @@ main {
     left: 0;
     right: 0;
     z-index: 200;
+    .back {
+        height: 120px;
+        line-height: 150px;
+        left: 50px;
+        top: 0;
+        cursor: pointer;
+        z-index: 200;
+        position: fixed;
+    }
     .head-main {
         display: flex;
         align-items: center;
@@ -114,7 +122,7 @@ main {
             cursor: pointer;
         }
         .ul {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             position: relative;
             p {
                 &:after {
@@ -141,11 +149,11 @@ main {
                 z-index: 1;
                 display: none;
                 background-color: #fff;
-                color:#333; 
+                color: #333;
                 li {
                     list-style: none;
                     padding: 14px 0;
-                    border-bottom:1px solid #999;
+                    border-bottom: 1px solid #999;
                 }
             }
         }
@@ -221,12 +229,5 @@ main {
     top: 0;
     left: 0;
     z-index: 99;
-    .back {
-        height: 120px;
-        line-height: 150px;
-        float: left;
-        margin-left: 50px;
-        cursor: pointer;
-    }
 }
 </style>
