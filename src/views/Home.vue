@@ -152,7 +152,7 @@ export default class Home extends Vue {
         }
         .con1 {
             position: fixed;
-            top: 240px;
+            top: 250px;
             left: 800px;
             z-index: 200;
         }
@@ -170,7 +170,7 @@ export default class Home extends Vue {
         }
         .con4 {
             position: fixed;
-            top: 600px;
+            top: 610px;
             left: 705px;
             z-index: 200;
         }
