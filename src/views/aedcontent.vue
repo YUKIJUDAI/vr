@@ -9,7 +9,7 @@
                 <img src="~@/assets/img/_home.png" alt="">
             </div>
             <div class="_next" @click="toNext">
-                <img src="~@/assets/img/_next.png" alt="">
+                <img src="~@/assets/img/_next.png" alt="" v-if="index < contentLength[base]">
             </div>
         </div>
     </div>
@@ -24,6 +24,7 @@ export default class Home extends Vue {
     bgImg: string = "";
     index: null | number = null;
     base: null | number = null;
+    contentLength: Array<number> = [0, 19, 26, 32, 41, 53];
 
     created() {
         const id = this.$route.params.id;

@@ -9,7 +9,7 @@
                 <a href="http://www.microport.com.cn/" target="_blank" rel="noopener noreferrer">
                     <img src="~@/assets/img/logo.png" class="logo">
                 </a>
-                <router-link class="title title1" tag="div" to="/">
+                <router-link class="title title1" tag="a" to="/">
                     <img src="~@/assets/img/title1.png">
                 </router-link>
                 <a href="http://me.amrtang.com/vr_sh/" target="_blank" class="title">
@@ -18,14 +18,14 @@
                 <a href="http://me.amrtang.com/vr_sz/" target="_blank" class="title">
                     <img src="~@/assets/img/title3.png">
                 </a>
-                <router-link class="title" tag="div" to="/online-intro">
+                <router-link class="title" tag="a" to="/online-intro">
                     <img src="~@/assets/img/title4.png">
                 </router-link>
-                <router-link class="title" tag="div" to="/education-intro">
+                <router-link class="title" tag="a" to="/education-intro">
                     <img src="~@/assets/img/title5.png">
                 </router-link>
                 <div class="title ul">
-                    <p>AED</p>
+                    <p>AED生命长城</p>
                     <ul>
                         <router-link tag="li" to="/aedtype/1">心脏猝死小科普</router-link>
                         <router-link tag="li" to="/aedtype/2">微创AED地图</router-link>
@@ -110,7 +110,7 @@ main {
         align-items: center;
         height: 120px;
         .title {
-            margin: 0 22px;
+            margin: 0 10px;
             cursor: pointer;
             padding: 10px 0;
         }
