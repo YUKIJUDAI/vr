@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img src="~@/assets/img/home-bg.png" alt="" class="bg">
+        <img src="~@/assets/img/home-bg-2.png" alt="" class="bg">
         <div class="light">
             <img src="~@/assets/img/left-light.png" class="left-light">
             <img src="~@/assets/img/right-light.png" class="right-light">

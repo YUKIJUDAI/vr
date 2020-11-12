@@ -22,7 +22,7 @@
             <a href="http://me.amrtang.com/vr_sz/" target="_blank" class="con4" :style="{'left': 348 + width + 'px'}">
                 <img src="~@/assets/img/con4.png">
             </a>
-            <router-link to="/aed" class="con5" :style="{'left': 878 + width + 'px'}">
+            <router-link to="/aed" class="con5" :style="{'left': 838 + width + 'px'}">
                 <img src="~@/assets/img/con5.png">
             </router-link>
         </main>

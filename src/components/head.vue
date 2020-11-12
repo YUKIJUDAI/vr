@@ -24,7 +24,7 @@
                 <router-link class="title" tag="a" to="/education-intro">
                     <img src="~@/assets/img/title5.png">
                 </router-link>
-                <div class="title ul">
+                <div class="title ul" style="font-size:15px">
                     <p>AED生命长城</p>
                     <ul>
                         <router-link tag="li" to="/aedtype/1">心脏猝死小科普</router-link>
@@ -109,13 +109,16 @@ main {
         display: flex;
         align-items: center;
         height: 120px;
+        img {
+            vertical-align: middle;
+        }
         .title {
             margin: 0 10px;
             cursor: pointer;
             padding: 10px 0;
         }
         .title1 {
-            margin-left: 40px;
+            margin-left: 15px;
         }
         .search {
             margin-left: 45px;
