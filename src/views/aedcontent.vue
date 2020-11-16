@@ -37,6 +37,7 @@ export default class Home extends Vue {
         if ((this.index as number) > (+(this.base as number + "0"))) {
             (this.index as number)--;
             this.bgImg = require("@/assets/img/content/" + this.index + ".jpg");
+            window.scroll(0, 0);
         }
     }
 
@@ -44,6 +45,7 @@ export default class Home extends Vue {
         if ((this.index as number) < (+(this.base as number + "9"))) {
             (this.index as number)++;
             this.bgImg = require("@/assets/img/content/" + this.index + ".jpg");
+            window.scroll(0, 0);
         }
     }
 
